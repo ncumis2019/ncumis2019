@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>上傳影片</title>
+        <style type="text/css">
+            .map{position:relative; left:px; top:30px; width:100px; height:50px; font-size:20px}
+            .upload{position:relative; left:1050px; top:-40px; width:400px; height:50px; font-size:20px}
+            .done{position:relative; left:1320px; bottom:-480px; width:150px; height:50px; font-size:20px}
+            .picture{position:relative; left:px; top:-50px}
+            .list{ position:relative; left:950px; top:120px; font-size:40px}
+            .upload-1{font-size:20px;}
+            .upload-2{font-size:20px}
+            .page{width:1500px; margin:10px auto;}
+        </style>
+        
+    </head>
+    
+    <body class="page">
+        <h1 align=center>上傳影片</h1>
+        <hr>
+            <button type="button" class="map">地圖 </button>
+            <span class="list">已上傳影片:</span>
+        
+        <form class="upload" method="post" enctype="multipart/form-data" action="upload.php">
+                <input class="upload-1" type="file" name="my_file[]" multiple>
+                <hr>
+                <input class="upload-2" type="submit" value="Upload"></form>
+        
+            <button type="button" class="done">完成</button>
+        <div class="picture" >
+            <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcDzpZbvFxMmL85YtHJFiiFSCn33uggj_p0mhTUKdWVzYaik4x width=1000px height=480px></div>
+                                                                                         
+    </body>
+</html>

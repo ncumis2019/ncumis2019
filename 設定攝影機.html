@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>影片設定</title>
+        <style type="text/css">
+            .choose{position:relative; left:100px; top:150px; font-size:20px; width:1200px}
+            .choosebutton{font-size:40px}
+            .done{position:relative; left:1240px; bottom:-370px; width:150px; height:50px; font-size:20px}
+            .timeset-1{position:relative; left:250px; top:150px; font-size:40px; width:1200px}
+            .timeset-2{position:absolute; left:200px; font-size:40px}
+            .nameset-1{position:relative; left:100px; top:200px; font-size:40px; width:1200px}
+            .nameset-2{position:absolute; left:120px; font-size:40px}
+            .page{width:1500px; margin:10px auto;}
+        </style>
+    </head>
+
+    <body class="page">
+        <h1 align="center">影片設定</h1>
+        <hr>
+        <form class="choose" method="post" enctype="multipart/form-data" action="upload.php">
+            <input class="choosebutton" type="file" name="my_file[]" multiple>
+            <hr style="width:1000">
+            <input class="done" type="submit"></form>
+
+        <div class="timeset-1">
+            <hr style="width:1000">時間設定:
+            <input type="datetime-local" class="timeset-2"></div>
+        
+        <div class="nameset-1">
+            <hr style="width:1000">名稱:
+            <input type="text" class="nameset-2"></div>
+    </body>
+
+</html>

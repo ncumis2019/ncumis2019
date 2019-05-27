@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>影片播放</title>
+        <style type="text/css">
+            .vedio{position:relative; top:px; width:960px; height:540px}
+            .name{position:relative; top:50px; left:-950px; font-size:40px}
+            .othervedioes{position:relative; top:-550px; left:1000px; width:200px; font-size:40px}
+            .line{position:relative;top:-10px; left:690px; width:950px}
+            .done{position:relative; left:1120px; bottom:px; width:150px; height:50px; font-size:20px}
+            .number{position:relative; left:700px; top:-400px; width:200px; font-size:40px; border:2px ridge #000000; background-color:#ffffff; color:#ff0000}
+            .page{width:1500px; margin:10px auto;}
+        </style>
+    </head>
+    
+    <body class="page">
+        <h1 align="center">影片觀看</h1>
+        <hr>
+        <video class="vedio" width="960" height="540" preload controls>
+            <source src="video.mp4" type=’video/mp4; codecs="avc1.42E01E, mp4a.40.2"’ />
+            <source src="video.ogv" type=’video/ogg; codecs="theora, vorbis"’ />
+            <source src="video.webm" type=’video/webm; codecs="vp8, vorbis"’ />
+        </video>
+        <span class="name">Vedio Name:<hr class="line"></span>
+        <form span>
+            <select class="othervedioes">
+             <option selected>其他影片</option>
+　           <option >v1111111111</option>
+　           <option >v222</option>
+　           <option >v3</option>
+　           <option >v4</option>
+　           ...
+            </select>
+            <span /form >
+        <span><button type="button" class="done">完成</button></span>
+        <span class="number" >人數:" "</span>
+    </body>
+    
+</html>
