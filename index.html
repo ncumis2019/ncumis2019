@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>用戶註冊頁面</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+  </head>
+
+  <body>
+     <fieldset>
+
+<form method="post" action="">
+    <table border="1" bordercolor="#0099ff" cellpadding="10px" cellspacing="0">
+        <tr>
+            <th colspan="3">註冊</th>
+        </tr>
+         <tr>
+            <td>公司名稱：</td>
+            <td>
+                <input  type="text" name="name" value="--請輸入公司名稱--"/>
+            </td>
+            <td><font color="#FF0000"></font></td>
+        </tr>
+        <tr>
+            <td>帳號：</td>
+            <td>
+                <input  type="text" name="name" value="--請輸入帳號--"/>
+            </td>
+            <td><font color="#FF0000">*可以使用英文字母/數字/底線</font></td>
+        </tr>
+        <tr>
+            <td>密碼：</td>
+            <td>
+                <input type="password" nam="pwd" />
+            </td>
+            <td><font color="#FF0000">*包含8~16字元</font></td>
+        </tr>
+        <tr>
+            <td>確認密碼：</td>
+            <td>
+                <input type="password" nam="pwd" />
+            </td>
+            <td><font color="#FF0000">*再次輸入密碼</font></td>
+        </tr>
+        
+      
+        <tr>
+            <td>方案：</td>
+            <td>
+                <select name="country"/>
+                    <option value="none">---選擇購買方案---</option>
+                    <option value="free">免費試用30天</option>
+                    <option value="month">$1000/月</option>
+                    <option value="yr">$9999/年</option>
+            </td>
+            <td><font color="#FF0000"></font></td>
+        </tr>
+        <tr>
+            <td>是否願意提供貴公司人流資料最為統計數據：</td>
+            <td>
+                <input type="radio" name="sex" value="nan" checked="checked"/>是
+                <input type="radio" name="sex" value="nv" />否
+            </td>
+            <td><font color="#FF0000"></font></td>
+        </tr>
+        <tr>
+            <th colspan="3">
+                <a href="http://localhost:63342/python%20文件/注册结果.html" > <input type="button" name="submit" value="提交" /></a>
+                <input type="reset" name="reset" value="重置" />
+            </th>
+        </tr>
+    </table>
+</form>
+</fieldset>
+  </body>
+
+</html>
