@@ -1,33 +1,199 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+	Design by TEMPLATED
+	http://templated.co
+	Released for free under the Creative Commons Attribution License
+	Name       : Eponymous
+	Version    : 1.0
+	Released   : 20130222
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>影片設定</title>
-        <style type="text/css">
-            .choose{position:relative; left:100px; top:150px; font-size:20px; width:1200px}
-            .choosebutton{font-size:40px}
-            .done{position:relative; left:1240px; bottom:-370px; width:150px; height:50px; font-size:20px}
-            .timeset-1{position:relative; left:250px; top:150px; font-size:40px; width:1200px}
-            .timeset-2{position:absolute; left:200px; font-size:40px}
-            .nameset-1{position:relative; left:100px; top:200px; font-size:40px; width:1200px}
-            .nameset-2{position:absolute; left:120px; font-size:40px}
-            .page{width:1500px; margin:10px auto;}
-        </style>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>MIS 2019</title>
+        <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css" />
+        <link href="模板/style.css" rel="stylesheet" type="text/css" />
+        <script src="jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+<script language="JavaScript1.2">
+<!--
+
+// Detect if the browser is IE or not.
+// If it is not IE, we assume that the browser is NS.
+var IE = document.all?true:false
+
+// If NS -- that is, !IE -- then set up for mouse capture
+if (!IE) document.captureEvents(Event.MOUSEMOVE)
+
+// Set-up to use getMouseXY function onMouseMove
+document.onmousemove = getMouseXY;
+
+// Temporary variables to hold mouse x-y pos.s
+var tempX = 0
+var tempY = 0
+
+// Main function to retrieve mouse x-y pos.s
+
+function getMouseXY(e) {
+  if (IE) { // grab the x-y pos.s if browser is IE
+    tempX = event.clientX + document.body.scrollLeft
+    tempY = event.clientY + document.body.scrollTop
+  } else {  // grab the x-y pos.s if browser is NS
+    tempX = e.pageX
+    tempY = e.pageY
+  }  
+  // catch possible negative values in NS4
+  if (tempX < 0){tempX = 0}
+  if (tempY < 0){tempY = 0}  
+  // show the position values in the form named Show
+  // in the text fields named MouseX and MouseY
+  document.Show.MouseX.value = tempX
+  document.Show.MouseY.value = tempY
+  return true
+}
+
+function a(){
+  var x = document.createElement("IMG"); // 攝影機圖片
+  x.setAttribute("src", "img/cam.jpg"); // 攝影機圖片位址
+  x.setAttribute("width", "30");
+  x.setAttribute("height", "30");
+  
+  document.body.appendChild(x);
+  
+  document.getElementById("tx").innerHTML=tempX; // 傳tx的值給html
+  document.getElementById("ty").innerHTML=tempY; // 傳ty的值給html
+  
+  
+  var pro = window.prompt("請輸入攝影機名稱： ")  //跳出輸入的視窗
+  alert("新增成功");
+  document.getElementById("pro").innerHTML=pro; //pro = 輸入的攝影機名字
+ 
+  $(x).css({top: tempY, left: tempX, position:'absolute'});  // 根據使用者按下按鈕的座標設定攝影機位置
+  
+  var btn=document.createElement("BUTTON"); // 新增一個button 位置在攝影機的img x+30 y+5的位置
+  var t=document.createTextNode(pro);  
+    btn.appendChild(t);
+	document.body.appendChild(btn);  
+    $(btn).css({top: tempY+5, left: tempX+30, position:'absolute'});
+
+}
+
+//-->
+</script>
+
+<script src="jquery-3.4.1.min.js"></script>
     </head>
+    <body>
+		<div id="bg">
+			<div id="outer">
+				<div id="header">
+					<div id="logo">
+						<h1>
+							<a href="#">人流 ‧ 留人</a>
+						</h1>
+					</div>
+					<div id="nav">
+						<ul>
+							<li class="first active">
+								<a href="https://ncumis2019.github.io/ncumis2019/%E7%80%8F%E8%A6%BD%E6%AD%B7%E5%8F%B2%E8%B3%87%E6%96%99%E4%B8%BB%E9%A0%81">瀏覽歷史資料</a>
+							</li>
+							<li>
+								<a href="https://ncumis2019.github.io/ncumis2019/%E4%B8%8A%E5%82%B3%E5%BD%B1%E7%89%871-1">上傳影片</a>
+							</li>
+							<li>
+								<a href="https://ncumis2019.github.io/ncumis2019/%E4%B8%8A%E5%82%B3%E5%9C%B0%E5%9C%96">上傳地圖</a>
+							</li>
+							<li>
+								<a href="https://ncumis2019.github.io/ncumis2019/%E7%99%BB%E5%85%A5">登入</a>
+                            </li>
+						</ul>
+						<br class="clear" />
+					</div>
+				</div>
+				<div id="banner">
+					<img src="模板/images/pic1.jpg" width="1120" height="200" alt="" />
+				</div>
+				<div id="main">
+                    
+					<div id="sidebar">
+						<h3>
+							自由發揮
+						</h3>
+						<p>
+							自由發揮
+						</p>
+						<ul class="linkedList">
+							<li class="first">
+								<a id="side1">自由</a>
+							</li>
+							<li>
+								<a id="side2">發揮</a>
+							</li>
+							<li>
+								<a id="side3">喔</a>
+							</li>
+						</ul>
+					</div>
+					<div id="content">
+						<div id="box1">
+							<h2>
+								主標題
+							</h2>
 
-    <body class="page">
-        <h1 align="center">影片設定</h1>
-        <hr>
-        <form class="choose" method="post" enctype="multipart/form-data" action="upload.php">
-            <input class="choosebutton" type="file" name="my_file[]" multiple>
-            <hr style="width:1000">
-            <input class="done" type="submit"></form>
+							<p>
+								功能敘述
+							</p>
+						</div>
+						<div id="box2">
 
-        <div class="timeset-1">
-            <hr style="width:1000">時間設定:
-            <input type="datetime-local" class="timeset-2"></div>
-        
-        <div class="nameset-1">
-            <hr style="width:1000">名稱:
-            <input type="text" class="nameset-2"></div>
+							<h3>
+								設定攝影機
+							</h3>
+							<p>
+                                <button onclick="a()"><img src="img/example01.jpg"></button>
+                                <br>
+                                <a>上次新增</a>
+                            <div id = "pro"></div> <!--        print出攝影機名字                -->
+                            <div id = "tx"></div><!-- print出 X軸 可刪除 -->
+                            <div id = "ty"></div><!-- print出 Y軸 可刪除 -->
+
+                            </p>		
+						</div>                       
+						<br class="clear" />
+					</div>
+					<br class="clear" />
+				</div>
+				<div id="footer">
+					<div id="footerSidebar">
+						<h3>
+							聯絡我們
+						</h3>
+						<ul class="linkedList">
+							<li class="first">
+								<a href="#">透過E-mail</a>
+							</li>
+							<li class="last">
+								<a href="#">其他方法</a>
+							</li>
+						</ul>
+					</div>
+					<div id="footerContent">
+						<h3>
+							遇到問題
+						</h3>
+						<p>
+				            透過左邊提供的聯絡方式告訴我們。
+						</p>
+					</div>
+					<br class="clear" />
+				</div>
+			</div>
+			<div id="copyright">
+				&copy; ncumis2019 | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>
+			</div>
+		</div>
     </body>
-
 </html>
