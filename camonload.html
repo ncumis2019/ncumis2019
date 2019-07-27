@@ -1,0 +1,99 @@
+
+
+<!-------JavaScript顯示滑鼠所在座標 START-------->
+<script language="JavaScript1.2">
+
+
+<!--
+
+// Detect if the browser is IE or not.
+// If it is not IE, we assume that the browser is NS.
+var IE = document.all?true:false
+
+// If NS -- that is, !IE -- then set up for mouse capture
+if (!IE) document.captureEvents(Event.MOUSEMOVE)
+
+// Set-up to use getMouseXY function onMouseMove
+document.onmousemove = getMouseXY;
+
+// Temporary variables to hold mouse x-y pos.s
+var tempX = 0
+var tempY = 0
+
+// Main function to retrieve mouse x-y pos.s
+
+function getMouseXY(e) {
+  if (IE) { // grab the x-y pos.s if browser is IE
+    tempX = event.clientX + document.body.scrollLeft
+    tempY = event.clientY + document.body.scrollTop
+  } else {  // grab the x-y pos.s if browser is NS
+    tempX = e.pageX
+    tempY = e.pageY
+  }  
+  // catch possible negative values in NS4
+  if (tempX < 0){tempX = 0}
+  if (tempY < 0){tempY = 0}  
+  // show the position values in the form named Show
+  // in the text fields named MouseX and MouseY
+  document.Show.MouseX.value = tempX
+  document.Show.MouseY.value = tempY
+  return true
+}
+
+function a(){
+  var x = document.createElement("IMG");
+  x.setAttribute("src", "img/cam.jpg");
+  x.setAttribute("width", "30");
+  x.setAttribute("height", "30");
+  
+  document.body.appendChild(x);
+  
+    document.getElementById("tx").innerHTML=tempX;
+    document.getElementById("ty").innerHTML=tempY;
+//    if ( confirm ("確定儲存攝影機位置? ") )
+//　　　 {　alert("儲存成功 " )  　 } 
+ 
+  $(x).css({top: tempY, left: tempX, position:'absolute'});
+    
+    var btn=document.createElement("BUTTON");
+	var t=document.createTextNode("0");
+	btn.appendChild(t);
+	document.body.appendChild(btn);
+      $(btn).css({top: tempY+5, left: tempX+30, position:'absolute'});
+}
+//-->
+</script>
+
+<script src="jquery-3.4.1.min.js"></script>
+<form name="Show">
+<p align="center"><input type="text" name="MouseX" value="0" size="4">X <input type="text" name="MouseY" value="0" size="4">Y </form>       
+<button onclick="a()"><img src="img/example01.jpg"></button>
+<br>
+<a>上次座標</a><div id = "tx"></div><div id = "ty"></div>
+<script>
+  var arrx = [250,300,150];
+  var arry = [250,300,170];
+  var btnarrx = arrx.map(add5);
+  var btnarry = arry.map(add30);
+  function add5(val){
+      return val+5;
+  }
+  function add30(val){
+      return val+30;
+  }
+
+for(i=0;i<arrx.length;i++){
+  var x = document.createElement("IMG");
+  x.setAttribute("src", "cam.jpg");
+  x.setAttribute("width", "30");
+  x.setAttribute("height", "30");
+  document.body.appendChild(x);
+  $(x).css({top: arrx[i], left: arry[i], position:'absolute'});
+    var btn=document.createElement("BUTTON");
+	var t=document.createTextNode("0");
+	btn.appendChild(t);
+	document.body.appendChild(btn);
+    $(btn).css({top: btnarrx[i], left: btnarry[i], position:'absolute'});
+}
+</script>
+
